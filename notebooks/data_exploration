@@ -1,0 +1,122 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 01 - Data Exploration\n",
+    "\n",
+    "Explore the AI drug-discovery **clinical-trial data** (ClinicalTrials.gov, with synthetic fallback) and the **market-assumptions** table that drives the Monte Carlo engine."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Setup: make the project root importable\n",
+    "import sys, os\n",
+    "sys.path.append(os.path.abspath('..'))\n",
+    "import pandas as pd, numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "from src import config\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Fetch & clean clinical trials"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from src.data_fetch import fetch_clinical_trials\n",
+    "from src.data_cleaning import clean_clinical_trials\n",
+    "raw = fetch_clinical_trials()\n",
+    "trials = clean_clinical_trials(raw)\n",
+    "print('Total trials:', len(trials))\n",
+    "trials.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Trials by phase and by year"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "trials['phase'].value_counts().plot(kind='bar', title='Trials by phase'); plt.show()\n",
+    "trials.groupby('year').size().plot(marker='o', title='AI drug-discovery trials by start year'); plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Top sponsors"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "trials['sponsor'].value_counts().head(10)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Market assumptions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from src.assumptions import load_assumptions\n",
+    "a = load_assumptions()\n",
+    "a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a.plot(x='segment', y='current_market_size_usd', kind='barh', legend=False,\n",
+    "       title='Current market size by segment'); plt.tight_layout(); plt.show()"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "name": "python",
+   "version": "3.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
