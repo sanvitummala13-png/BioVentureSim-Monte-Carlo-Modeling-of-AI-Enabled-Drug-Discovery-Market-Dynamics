@@ -1,0 +1,176 @@
+nct_id,brief_title,phase,status,start_date,completion_date,conditions,interventions,sponsor,enrollment,study_type,query_term,year
+NCT95822412,AI study 0 for artificial intelligence drug discovery,PHASE2,RECRUITING,2017-05,2019-04,Oncology,AI-designed compound 0,BioNTech,91,INTERVENTIONAL,artificial intelligence drug discovery,2017
+NCT83197857,AI study 1 for artificial intelligence drug discovery,PHASE1,TERMINATED,2017-01,2019-01,Infectious Disease,AI-designed compound 1,Recursion,131,INTERVENTIONAL,artificial intelligence drug discovery,2017
+NCT90801586,AI study 2 for artificial intelligence drug discovery,PHASE2,COMPLETED,2016-09,2018-07,Diabetes,AI-designed compound 2,Generic University,249,INTERVENTIONAL,artificial intelligence drug discovery,2016
+NCT10872248,AI study 3 for artificial intelligence drug discovery,PHASE2,TERMINATED,2018-06,2020-05,Diabetes,AI-designed compound 3,Atomwise,130,INTERVENTIONAL,artificial intelligence drug discovery,2018
+NCT23718431,AI study 4 for artificial intelligence drug discovery,PHASE3,TERMINATED,2017-02,2019-06,Oncology,AI-designed compound 4,Exscientia,329,INTERVENTIONAL,artificial intelligence drug discovery,2017
+NCT71662963,AI study 5 for artificial intelligence drug discovery,PHASE3,RECRUITING,2024-07,2026-02,Infectious Disease,AI-designed compound 5,BioNTech,444,INTERVENTIONAL,artificial intelligence drug discovery,2024
+NCT58537831,AI study 6 for artificial intelligence drug discovery,PHASE2,COMPLETED,2025-02,2027-01,Oncology,AI-designed compound 6,Exscientia,415,INTERVENTIONAL,artificial intelligence drug discovery,2025
+NCT41244663,AI study 7 for artificial intelligence drug discovery,PHASE3,TERMINATED,2017-05,2019-08,Diabetes,AI-designed compound 7,Exscientia,103,INTERVENTIONAL,artificial intelligence drug discovery,2017
+NCT38119557,AI study 8 for artificial intelligence drug discovery,PHASE2,RECRUITING,2020-03,2022-09,Fibrosis,AI-designed compound 8,BenevolentAI,103,INTERVENTIONAL,artificial intelligence drug discovery,2020
+NCT46231783,AI study 9 for artificial intelligence drug discovery,PHASE2,COMPLETED,2024-06,2026-01,Diabetes,AI-designed compound 9,Insilico Medicine,440,INTERVENTIONAL,artificial intelligence drug discovery,2024
+NCT63843426,AI study 10 for artificial intelligence drug discovery,PHASE2,RECRUITING,2020-04,2022-06,Fibrosis,AI-designed compound 10,BenevolentAI,355,INTERVENTIONAL,artificial intelligence drug discovery,2020
+NCT96282117,AI study 11 for artificial intelligence drug discovery,PHASE2,COMPLETED,2023-05,2025-03,Infectious Disease,AI-designed compound 11,Generic University,401,INTERVENTIONAL,artificial intelligence drug discovery,2023
+NCT45264581,AI study 12 for artificial intelligence drug discovery,PHASE2,TERMINATED,2025-07,2027-06,Fibrosis,AI-designed compound 12,Generic University,90,INTERVENTIONAL,artificial intelligence drug discovery,2025
+NCT22201654,AI study 13 for artificial intelligence drug discovery,NA,RECRUITING,2016-03,2018-03,Fibrosis,AI-designed compound 13,Insilico Medicine,325,INTERVENTIONAL,artificial intelligence drug discovery,2016
+NCT61220073,AI study 14 for artificial intelligence drug discovery,PHASE1,TERMINATED,2025-09,2027-05,Oncology,AI-designed compound 14,BioNTech,368,INTERVENTIONAL,artificial intelligence drug discovery,2025
+NCT82070937,AI study 15 for artificial intelligence drug discovery,NA,ACTIVE_NOT_RECRUITING,2020-02,2022-05,Oncology,AI-designed compound 15,BenevolentAI,100,INTERVENTIONAL,artificial intelligence drug discovery,2020
+NCT45351479,AI study 16 for artificial intelligence drug discovery,PHASE3,COMPLETED,2024-09,2026-02,Infectious Disease,AI-designed compound 16,BioNTech,450,INTERVENTIONAL,artificial intelligence drug discovery,2024
+NCT91734598,AI study 17 for artificial intelligence drug discovery,PHASE1,COMPLETED,2019-06,2021-03,Fibrosis,AI-designed compound 17,Exscientia,326,INTERVENTIONAL,artificial intelligence drug discovery,2019
+NCT12614124,AI study 18 for artificial intelligence drug discovery,PHASE1,ACTIVE_NOT_RECRUITING,2017-05,2019-04,Oncology,AI-designed compound 18,Generic University,143,INTERVENTIONAL,artificial intelligence drug discovery,2017
+NCT21496211,AI study 19 for artificial intelligence drug discovery,PHASE2,RECRUITING,2023-09,2025-03,Infectious Disease,AI-designed compound 19,BenevolentAI,357,INTERVENTIONAL,artificial intelligence drug discovery,2023
+NCT32162965,AI study 20 for artificial intelligence drug discovery,PHASE2,TERMINATED,2020-04,2022-09,Fibrosis,AI-designed compound 20,Exscientia,385,INTERVENTIONAL,artificial intelligence drug discovery,2020
+NCT97225156,AI study 21 for artificial intelligence drug discovery,PHASE1,TERMINATED,2021-09,2023-08,Oncology,AI-designed compound 21,Recursion,146,INTERVENTIONAL,artificial intelligence drug discovery,2021
+NCT55377076,AI study 22 for artificial intelligence drug discovery,PHASE1,COMPLETED,2016-04,2018-01,Oncology,AI-designed compound 22,BioNTech,382,INTERVENTIONAL,artificial intelligence drug discovery,2016
+NCT40728046,AI study 23 for artificial intelligence drug discovery,PHASE2,RECRUITING,2017-06,2019-02,Fibrosis,AI-designed compound 23,BioNTech,162,INTERVENTIONAL,artificial intelligence drug discovery,2017
+NCT38754377,AI study 24 for artificial intelligence drug discovery,NA,COMPLETED,2024-08,2026-04,Alzheimer Disease,AI-designed compound 24,BenevolentAI,433,INTERVENTIONAL,artificial intelligence drug discovery,2024
+NCT22660194,AI study 0 for machine learning drug discovery,NA,TERMINATED,2017-06,2019-07,Oncology,AI-designed compound 0,Atomwise,259,INTERVENTIONAL,machine learning drug discovery,2017
+NCT97705310,AI study 1 for machine learning drug discovery,PHASE1,RECRUITING,2017-07,2019-06,Alzheimer Disease,AI-designed compound 1,Recursion,147,INTERVENTIONAL,machine learning drug discovery,2017
+NCT81979055,AI study 2 for machine learning drug discovery,PHASE3,COMPLETED,2023-07,2025-03,Oncology,AI-designed compound 2,Recursion,256,INTERVENTIONAL,machine learning drug discovery,2023
+NCT69476001,AI study 3 for machine learning drug discovery,PHASE1,RECRUITING,2024-01,2026-09,Alzheimer Disease,AI-designed compound 3,Atomwise,67,INTERVENTIONAL,machine learning drug discovery,2024
+NCT32321899,AI study 4 for machine learning drug discovery,NA,TERMINATED,2022-08,2024-04,Alzheimer Disease,AI-designed compound 4,Insilico Medicine,482,INTERVENTIONAL,machine learning drug discovery,2022
+NCT60864911,AI study 5 for machine learning drug discovery,PHASE3,TERMINATED,2016-05,2018-08,Infectious Disease,AI-designed compound 5,BioNTech,236,INTERVENTIONAL,machine learning drug discovery,2016
+NCT98834863,AI study 6 for machine learning drug discovery,PHASE2,COMPLETED,2023-04,2025-05,Infectious Disease,AI-designed compound 6,Generic University,49,INTERVENTIONAL,machine learning drug discovery,2023
+NCT18181586,AI study 7 for machine learning drug discovery,PHASE2,RECRUITING,2021-01,2023-08,Oncology,AI-designed compound 7,Generic University,49,INTERVENTIONAL,machine learning drug discovery,2021
+NCT34941004,AI study 8 for machine learning drug discovery,PHASE1,RECRUITING,2017-04,2019-07,Alzheimer Disease,AI-designed compound 8,Generic University,475,INTERVENTIONAL,machine learning drug discovery,2017
+NCT87701200,AI study 9 for machine learning drug discovery,PHASE3,RECRUITING,2025-02,2027-07,Alzheimer Disease,AI-designed compound 9,Exscientia,498,INTERVENTIONAL,machine learning drug discovery,2025
+NCT99889098,AI study 10 for machine learning drug discovery,PHASE2,COMPLETED,2021-05,2023-07,Diabetes,AI-designed compound 10,BioNTech,363,INTERVENTIONAL,machine learning drug discovery,2021
+NCT71367643,AI study 11 for machine learning drug discovery,PHASE1,RECRUITING,2021-01,2023-08,Alzheimer Disease,AI-designed compound 11,Generic University,57,INTERVENTIONAL,machine learning drug discovery,2021
+NCT77898694,AI study 12 for machine learning drug discovery,PHASE2,COMPLETED,2020-06,2022-02,Alzheimer Disease,AI-designed compound 12,Exscientia,209,INTERVENTIONAL,machine learning drug discovery,2020
+NCT68812137,AI study 13 for machine learning drug discovery,PHASE3,ACTIVE_NOT_RECRUITING,2024-09,2026-01,Oncology,AI-designed compound 13,BioNTech,497,INTERVENTIONAL,machine learning drug discovery,2024
+NCT28024248,AI study 14 for machine learning drug discovery,PHASE2,RECRUITING,2020-02,2022-09,Infectious Disease,AI-designed compound 14,Exscientia,159,INTERVENTIONAL,machine learning drug discovery,2020
+NCT38270233,AI study 15 for machine learning drug discovery,NA,COMPLETED,2021-05,2023-09,Oncology,AI-designed compound 15,Atomwise,148,INTERVENTIONAL,machine learning drug discovery,2021
+NCT22388090,AI study 16 for machine learning drug discovery,PHASE3,ACTIVE_NOT_RECRUITING,2022-01,2024-01,Diabetes,AI-designed compound 16,Recursion,414,INTERVENTIONAL,machine learning drug discovery,2022
+NCT31687165,AI study 17 for machine learning drug discovery,PHASE1,TERMINATED,2023-09,2025-01,Alzheimer Disease,AI-designed compound 17,BioNTech,58,INTERVENTIONAL,machine learning drug discovery,2023
+NCT83227889,AI study 18 for machine learning drug discovery,NA,ACTIVE_NOT_RECRUITING,2016-09,2018-03,Diabetes,AI-designed compound 18,Insilico Medicine,85,INTERVENTIONAL,machine learning drug discovery,2016
+NCT58942697,AI study 19 for machine learning drug discovery,PHASE1,ACTIVE_NOT_RECRUITING,2016-04,2018-04,Infectious Disease,AI-designed compound 19,Atomwise,201,INTERVENTIONAL,machine learning drug discovery,2016
+NCT64543049,AI study 20 for machine learning drug discovery,PHASE2,COMPLETED,2025-04,2027-03,Oncology,AI-designed compound 20,BenevolentAI,471,INTERVENTIONAL,machine learning drug discovery,2025
+NCT34073380,AI study 21 for machine learning drug discovery,PHASE2,TERMINATED,2021-04,2023-05,Oncology,AI-designed compound 21,BioNTech,423,INTERVENTIONAL,machine learning drug discovery,2021
+NCT61343880,AI study 22 for machine learning drug discovery,NA,TERMINATED,2016-04,2018-04,Alzheimer Disease,AI-designed compound 22,Exscientia,199,INTERVENTIONAL,machine learning drug discovery,2016
+NCT39920292,AI study 23 for machine learning drug discovery,PHASE3,COMPLETED,2016-07,2018-06,Diabetes,AI-designed compound 23,Insilico Medicine,462,INTERVENTIONAL,machine learning drug discovery,2016
+NCT57130035,AI study 24 for machine learning drug discovery,PHASE1,TERMINATED,2024-09,2026-06,Alzheimer Disease,AI-designed compound 24,Exscientia,79,INTERVENTIONAL,machine learning drug discovery,2024
+NCT87925434,AI study 0 for AI clinical trial optimization,PHASE3,RECRUITING,2020-02,2022-07,Diabetes,AI-designed compound 0,Atomwise,393,INTERVENTIONAL,AI clinical trial optimization,2020
+NCT68571795,AI study 1 for AI clinical trial optimization,PHASE3,RECRUITING,2025-07,2027-04,Fibrosis,AI-designed compound 1,BioNTech,42,INTERVENTIONAL,AI clinical trial optimization,2025
+NCT10226999,AI study 2 for AI clinical trial optimization,PHASE1,COMPLETED,2024-06,2026-07,Infectious Disease,AI-designed compound 2,Exscientia,360,INTERVENTIONAL,AI clinical trial optimization,2024
+NCT52133044,AI study 3 for AI clinical trial optimization,NA,ACTIVE_NOT_RECRUITING,2017-09,2019-05,Diabetes,AI-designed compound 3,BenevolentAI,187,INTERVENTIONAL,AI clinical trial optimization,2017
+NCT84411983,AI study 4 for AI clinical trial optimization,PHASE2,COMPLETED,2018-07,2020-07,Diabetes,AI-designed compound 4,Generic University,335,INTERVENTIONAL,AI clinical trial optimization,2018
+NCT64502486,AI study 5 for AI clinical trial optimization,PHASE2,RECRUITING,2024-05,2026-05,Infectious Disease,AI-designed compound 5,Atomwise,240,INTERVENTIONAL,AI clinical trial optimization,2024
+NCT91424737,AI study 6 for AI clinical trial optimization,PHASE2,TERMINATED,2021-08,2023-08,Alzheimer Disease,AI-designed compound 6,BenevolentAI,281,INTERVENTIONAL,AI clinical trial optimization,2021
+NCT98429450,AI study 7 for AI clinical trial optimization,PHASE1,ACTIVE_NOT_RECRUITING,2017-09,2019-06,Alzheimer Disease,AI-designed compound 7,Atomwise,439,INTERVENTIONAL,AI clinical trial optimization,2017
+NCT51663795,AI study 8 for AI clinical trial optimization,PHASE1,COMPLETED,2019-03,2021-01,Infectious Disease,AI-designed compound 8,BenevolentAI,145,INTERVENTIONAL,AI clinical trial optimization,2019
+NCT19774839,AI study 9 for AI clinical trial optimization,NA,TERMINATED,2023-04,2025-07,Alzheimer Disease,AI-designed compound 9,Recursion,224,INTERVENTIONAL,AI clinical trial optimization,2023
+NCT98054615,AI study 10 for AI clinical trial optimization,PHASE2,RECRUITING,2016-07,2018-04,Infectious Disease,AI-designed compound 10,BioNTech,431,INTERVENTIONAL,AI clinical trial optimization,2016
+NCT72350830,AI study 11 for AI clinical trial optimization,PHASE2,COMPLETED,2016-02,2018-08,Infectious Disease,AI-designed compound 11,BenevolentAI,430,INTERVENTIONAL,AI clinical trial optimization,2016
+NCT85017682,AI study 12 for AI clinical trial optimization,NA,ACTIVE_NOT_RECRUITING,2025-08,2027-09,Fibrosis,AI-designed compound 12,Generic University,445,INTERVENTIONAL,AI clinical trial optimization,2025
+NCT31361812,AI study 13 for AI clinical trial optimization,PHASE3,TERMINATED,2023-05,2025-04,Infectious Disease,AI-designed compound 13,Atomwise,412,INTERVENTIONAL,AI clinical trial optimization,2023
+NCT75041510,AI study 14 for AI clinical trial optimization,PHASE3,ACTIVE_NOT_RECRUITING,2019-08,2021-02,Diabetes,AI-designed compound 14,Exscientia,140,INTERVENTIONAL,AI clinical trial optimization,2019
+NCT52910691,AI study 15 for AI clinical trial optimization,PHASE2,RECRUITING,2024-03,2026-03,Alzheimer Disease,AI-designed compound 15,BioNTech,216,INTERVENTIONAL,AI clinical trial optimization,2024
+NCT38716269,AI study 16 for AI clinical trial optimization,NA,TERMINATED,2017-07,2019-06,Alzheimer Disease,AI-designed compound 16,Insilico Medicine,232,INTERVENTIONAL,AI clinical trial optimization,2017
+NCT66390708,AI study 17 for AI clinical trial optimization,PHASE1,RECRUITING,2022-07,2024-08,Fibrosis,AI-designed compound 17,Exscientia,200,INTERVENTIONAL,AI clinical trial optimization,2022
+NCT66240084,AI study 18 for AI clinical trial optimization,PHASE3,COMPLETED,2024-08,2026-04,Oncology,AI-designed compound 18,BenevolentAI,243,INTERVENTIONAL,AI clinical trial optimization,2024
+NCT62191530,AI study 19 for AI clinical trial optimization,PHASE2,TERMINATED,2021-03,2023-08,Oncology,AI-designed compound 19,Generic University,338,INTERVENTIONAL,AI clinical trial optimization,2021
+NCT62884503,AI study 20 for AI clinical trial optimization,PHASE2,RECRUITING,2025-02,2027-07,Alzheimer Disease,AI-designed compound 20,BenevolentAI,463,INTERVENTIONAL,AI clinical trial optimization,2025
+NCT16749089,AI study 21 for AI clinical trial optimization,NA,TERMINATED,2020-06,2022-04,Fibrosis,AI-designed compound 21,Exscientia,187,INTERVENTIONAL,AI clinical trial optimization,2020
+NCT47346970,AI study 22 for AI clinical trial optimization,PHASE1,ACTIVE_NOT_RECRUITING,2022-02,2024-08,Oncology,AI-designed compound 22,Generic University,403,INTERVENTIONAL,AI clinical trial optimization,2022
+NCT56970882,AI study 23 for AI clinical trial optimization,PHASE2,RECRUITING,2019-01,2021-01,Oncology,AI-designed compound 23,Atomwise,122,INTERVENTIONAL,AI clinical trial optimization,2019
+NCT93394260,AI study 24 for AI clinical trial optimization,PHASE1,COMPLETED,2018-03,2020-08,Fibrosis,AI-designed compound 24,Recursion,308,INTERVENTIONAL,AI clinical trial optimization,2018
+NCT44392446,AI study 0 for computational drug discovery,PHASE3,COMPLETED,2021-02,2023-03,Oncology,AI-designed compound 0,Generic University,75,INTERVENTIONAL,computational drug discovery,2021
+NCT51870192,AI study 1 for computational drug discovery,PHASE1,TERMINATED,2025-07,2027-04,Alzheimer Disease,AI-designed compound 1,BioNTech,323,INTERVENTIONAL,computational drug discovery,2025
+NCT23676961,AI study 2 for computational drug discovery,NA,RECRUITING,2020-01,2022-06,Oncology,AI-designed compound 2,Exscientia,358,INTERVENTIONAL,computational drug discovery,2020
+NCT77908907,AI study 3 for computational drug discovery,PHASE1,RECRUITING,2021-07,2023-08,Fibrosis,AI-designed compound 3,Exscientia,241,INTERVENTIONAL,computational drug discovery,2021
+NCT30534124,AI study 4 for computational drug discovery,NA,COMPLETED,2022-09,2024-05,Infectious Disease,AI-designed compound 4,BenevolentAI,258,INTERVENTIONAL,computational drug discovery,2022
+NCT46023439,AI study 5 for computational drug discovery,NA,COMPLETED,2021-02,2023-05,Fibrosis,AI-designed compound 5,Atomwise,144,INTERVENTIONAL,computational drug discovery,2021
+NCT86483924,AI study 6 for computational drug discovery,NA,TERMINATED,2025-06,2027-01,Alzheimer Disease,AI-designed compound 6,Exscientia,455,INTERVENTIONAL,computational drug discovery,2025
+NCT75437844,AI study 7 for computational drug discovery,PHASE3,ACTIVE_NOT_RECRUITING,2019-05,2021-06,Diabetes,AI-designed compound 7,Generic University,470,INTERVENTIONAL,computational drug discovery,2019
+NCT84597009,AI study 8 for computational drug discovery,NA,COMPLETED,2016-02,2018-04,Alzheimer Disease,AI-designed compound 8,Generic University,270,INTERVENTIONAL,computational drug discovery,2016
+NCT73900135,AI study 9 for computational drug discovery,PHASE3,TERMINATED,2023-01,2025-02,Alzheimer Disease,AI-designed compound 9,BenevolentAI,133,INTERVENTIONAL,computational drug discovery,2023
+NCT51098277,AI study 10 for computational drug discovery,PHASE3,ACTIVE_NOT_RECRUITING,2025-08,2027-09,Infectious Disease,AI-designed compound 10,BioNTech,237,INTERVENTIONAL,computational drug discovery,2025
+NCT54398056,AI study 11 for computational drug discovery,PHASE3,TERMINATED,2021-05,2023-05,Alzheimer Disease,AI-designed compound 11,Insilico Medicine,138,INTERVENTIONAL,computational drug discovery,2021
+NCT52352128,AI study 12 for computational drug discovery,NA,COMPLETED,2017-04,2019-04,Infectious Disease,AI-designed compound 12,BioNTech,161,INTERVENTIONAL,computational drug discovery,2017
+NCT80415568,AI study 13 for computational drug discovery,PHASE3,ACTIVE_NOT_RECRUITING,2025-02,2027-04,Alzheimer Disease,AI-designed compound 13,Exscientia,136,INTERVENTIONAL,computational drug discovery,2025
+NCT50569669,AI study 14 for computational drug discovery,PHASE1,COMPLETED,2016-05,2018-01,Alzheimer Disease,AI-designed compound 14,Exscientia,303,INTERVENTIONAL,computational drug discovery,2016
+NCT95613415,AI study 15 for computational drug discovery,NA,RECRUITING,2023-01,2025-05,Diabetes,AI-designed compound 15,BenevolentAI,265,INTERVENTIONAL,computational drug discovery,2023
+NCT34744872,AI study 16 for computational drug discovery,PHASE1,ACTIVE_NOT_RECRUITING,2016-08,2018-02,Oncology,AI-designed compound 16,BenevolentAI,225,INTERVENTIONAL,computational drug discovery,2016
+NCT87446468,AI study 17 for computational drug discovery,PHASE1,COMPLETED,2016-03,2018-05,Infectious Disease,AI-designed compound 17,Insilico Medicine,147,INTERVENTIONAL,computational drug discovery,2016
+NCT65857931,AI study 18 for computational drug discovery,NA,COMPLETED,2025-09,2027-07,Diabetes,AI-designed compound 18,BenevolentAI,485,INTERVENTIONAL,computational drug discovery,2025
+NCT88990506,AI study 19 for computational drug discovery,PHASE2,ACTIVE_NOT_RECRUITING,2022-01,2024-02,Diabetes,AI-designed compound 19,Recursion,340,INTERVENTIONAL,computational drug discovery,2022
+NCT98641164,AI study 20 for computational drug discovery,PHASE1,COMPLETED,2017-04,2019-03,Fibrosis,AI-designed compound 20,Insilico Medicine,100,INTERVENTIONAL,computational drug discovery,2017
+NCT70465583,AI study 21 for computational drug discovery,PHASE2,TERMINATED,2025-05,2027-01,Diabetes,AI-designed compound 21,BioNTech,167,INTERVENTIONAL,computational drug discovery,2025
+NCT70939053,AI study 22 for computational drug discovery,NA,COMPLETED,2017-05,2019-04,Alzheimer Disease,AI-designed compound 22,Generic University,78,INTERVENTIONAL,computational drug discovery,2017
+NCT96924061,AI study 23 for computational drug discovery,PHASE1,ACTIVE_NOT_RECRUITING,2018-03,2020-02,Diabetes,AI-designed compound 23,Atomwise,104,INTERVENTIONAL,computational drug discovery,2018
+NCT89865458,AI study 24 for computational drug discovery,NA,ACTIVE_NOT_RECRUITING,2025-08,2027-02,Fibrosis,AI-designed compound 24,Exscientia,372,INTERVENTIONAL,computational drug discovery,2025
+NCT46540265,AI study 0 for protein design,PHASE1,TERMINATED,2024-08,2026-02,Diabetes,AI-designed compound 0,BenevolentAI,475,INTERVENTIONAL,protein design,2024
+NCT91029073,AI study 1 for protein design,PHASE1,RECRUITING,2020-02,2022-04,Diabetes,AI-designed compound 1,BioNTech,411,INTERVENTIONAL,protein design,2020
+NCT87342561,AI study 2 for protein design,NA,COMPLETED,2016-08,2018-09,Alzheimer Disease,AI-designed compound 2,Exscientia,489,INTERVENTIONAL,protein design,2016
+NCT88561612,AI study 3 for protein design,PHASE3,TERMINATED,2022-02,2024-08,Diabetes,AI-designed compound 3,Exscientia,229,INTERVENTIONAL,protein design,2022
+NCT99943797,AI study 4 for protein design,NA,COMPLETED,2017-06,2019-07,Fibrosis,AI-designed compound 4,BioNTech,167,INTERVENTIONAL,protein design,2017
+NCT83832717,AI study 5 for protein design,PHASE3,TERMINATED,2016-02,2018-06,Fibrosis,AI-designed compound 5,Insilico Medicine,185,INTERVENTIONAL,protein design,2016
+NCT79067939,AI study 6 for protein design,PHASE2,TERMINATED,2016-07,2018-01,Infectious Disease,AI-designed compound 6,Exscientia,285,INTERVENTIONAL,protein design,2016
+NCT76906611,AI study 7 for protein design,PHASE2,RECRUITING,2023-04,2025-05,Fibrosis,AI-designed compound 7,Exscientia,494,INTERVENTIONAL,protein design,2023
+NCT75056916,AI study 8 for protein design,PHASE3,RECRUITING,2017-04,2019-03,Infectious Disease,AI-designed compound 8,Insilico Medicine,302,INTERVENTIONAL,protein design,2017
+NCT64759583,AI study 9 for protein design,PHASE1,COMPLETED,2017-02,2019-08,Alzheimer Disease,AI-designed compound 9,Atomwise,351,INTERVENTIONAL,protein design,2017
+NCT76890827,AI study 10 for protein design,NA,ACTIVE_NOT_RECRUITING,2020-07,2022-08,Infectious Disease,AI-designed compound 10,BenevolentAI,144,INTERVENTIONAL,protein design,2020
+NCT29413516,AI study 11 for protein design,PHASE1,COMPLETED,2022-09,2024-03,Fibrosis,AI-designed compound 11,Atomwise,161,INTERVENTIONAL,protein design,2022
+NCT55617282,AI study 12 for protein design,PHASE3,ACTIVE_NOT_RECRUITING,2024-01,2026-05,Infectious Disease,AI-designed compound 12,Generic University,448,INTERVENTIONAL,protein design,2024
+NCT98575748,AI study 13 for protein design,NA,COMPLETED,2023-08,2025-09,Infectious Disease,AI-designed compound 13,Exscientia,196,INTERVENTIONAL,protein design,2023
+NCT82937948,AI study 14 for protein design,PHASE2,TERMINATED,2022-06,2024-04,Alzheimer Disease,AI-designed compound 14,BenevolentAI,312,INTERVENTIONAL,protein design,2022
+NCT65133300,AI study 15 for protein design,NA,ACTIVE_NOT_RECRUITING,2016-08,2018-07,Alzheimer Disease,AI-designed compound 15,Atomwise,359,INTERVENTIONAL,protein design,2016
+NCT76481885,AI study 16 for protein design,PHASE1,COMPLETED,2016-09,2018-06,Fibrosis,AI-designed compound 16,Atomwise,467,INTERVENTIONAL,protein design,2016
+NCT23383077,AI study 17 for protein design,NA,TERMINATED,2024-01,2026-03,Alzheimer Disease,AI-designed compound 17,BioNTech,465,INTERVENTIONAL,protein design,2024
+NCT20043277,AI study 18 for protein design,PHASE1,ACTIVE_NOT_RECRUITING,2023-06,2025-07,Infectious Disease,AI-designed compound 18,Exscientia,456,INTERVENTIONAL,protein design,2023
+NCT61003997,AI study 19 for protein design,PHASE1,TERMINATED,2021-09,2023-01,Diabetes,AI-designed compound 19,BioNTech,140,INTERVENTIONAL,protein design,2021
+NCT40532691,AI study 20 for protein design,NA,TERMINATED,2017-02,2019-02,Diabetes,AI-designed compound 20,BioNTech,105,INTERVENTIONAL,protein design,2017
+NCT13885234,AI study 21 for protein design,PHASE3,ACTIVE_NOT_RECRUITING,2016-01,2018-05,Alzheimer Disease,AI-designed compound 21,BenevolentAI,211,INTERVENTIONAL,protein design,2016
+NCT42775624,AI study 22 for protein design,PHASE2,TERMINATED,2024-03,2026-03,Fibrosis,AI-designed compound 22,Generic University,60,INTERVENTIONAL,protein design,2024
+NCT93176117,AI study 23 for protein design,NA,TERMINATED,2019-03,2021-04,Fibrosis,AI-designed compound 23,Exscientia,346,INTERVENTIONAL,protein design,2019
+NCT44269370,AI study 24 for protein design,PHASE2,TERMINATED,2016-05,2018-09,Diabetes,AI-designed compound 24,BenevolentAI,57,INTERVENTIONAL,protein design,2016
+NCT88862539,AI study 0 for target discovery,PHASE3,TERMINATED,2020-05,2022-08,Fibrosis,AI-designed compound 0,BenevolentAI,121,INTERVENTIONAL,target discovery,2020
+NCT24314759,AI study 1 for target discovery,PHASE3,TERMINATED,2019-06,2021-05,Fibrosis,AI-designed compound 1,Atomwise,31,INTERVENTIONAL,target discovery,2019
+NCT46840133,AI study 2 for target discovery,PHASE2,RECRUITING,2016-08,2018-05,Diabetes,AI-designed compound 2,Atomwise,330,INTERVENTIONAL,target discovery,2016
+NCT39394291,AI study 3 for target discovery,PHASE1,ACTIVE_NOT_RECRUITING,2019-03,2021-02,Fibrosis,AI-designed compound 3,Atomwise,178,INTERVENTIONAL,target discovery,2019
+NCT14478111,AI study 4 for target discovery,PHASE3,ACTIVE_NOT_RECRUITING,2025-03,2027-02,Fibrosis,AI-designed compound 4,BioNTech,187,INTERVENTIONAL,target discovery,2025
+NCT33574011,AI study 5 for target discovery,PHASE3,COMPLETED,2019-09,2021-06,Diabetes,AI-designed compound 5,Recursion,445,INTERVENTIONAL,target discovery,2019
+NCT74672520,AI study 6 for target discovery,PHASE1,ACTIVE_NOT_RECRUITING,2020-02,2022-08,Alzheimer Disease,AI-designed compound 6,Atomwise,92,INTERVENTIONAL,target discovery,2020
+NCT63339667,AI study 7 for target discovery,PHASE1,ACTIVE_NOT_RECRUITING,2024-02,2026-07,Oncology,AI-designed compound 7,Generic University,155,INTERVENTIONAL,target discovery,2024
+NCT71040347,AI study 8 for target discovery,PHASE1,ACTIVE_NOT_RECRUITING,2021-07,2023-06,Fibrosis,AI-designed compound 8,Recursion,365,INTERVENTIONAL,target discovery,2021
+NCT13358751,AI study 9 for target discovery,NA,ACTIVE_NOT_RECRUITING,2025-04,2027-02,Diabetes,AI-designed compound 9,BioNTech,485,INTERVENTIONAL,target discovery,2025
+NCT97139443,AI study 10 for target discovery,PHASE1,RECRUITING,2022-03,2024-01,Oncology,AI-designed compound 10,BenevolentAI,175,INTERVENTIONAL,target discovery,2022
+NCT23044889,AI study 11 for target discovery,PHASE3,COMPLETED,2019-07,2021-08,Infectious Disease,AI-designed compound 11,BioNTech,363,INTERVENTIONAL,target discovery,2019
+NCT66254240,AI study 12 for target discovery,NA,COMPLETED,2025-07,2027-02,Diabetes,AI-designed compound 12,BenevolentAI,335,INTERVENTIONAL,target discovery,2025
+NCT14391105,AI study 13 for target discovery,PHASE2,COMPLETED,2021-08,2023-08,Oncology,AI-designed compound 13,Exscientia,457,INTERVENTIONAL,target discovery,2021
+NCT59302863,AI study 14 for target discovery,PHASE3,ACTIVE_NOT_RECRUITING,2024-01,2026-07,Fibrosis,AI-designed compound 14,Insilico Medicine,117,INTERVENTIONAL,target discovery,2024
+NCT22304198,AI study 15 for target discovery,PHASE2,RECRUITING,2019-01,2021-06,Infectious Disease,AI-designed compound 15,Atomwise,84,INTERVENTIONAL,target discovery,2019
+NCT37542226,AI study 16 for target discovery,PHASE3,COMPLETED,2017-04,2019-04,Infectious Disease,AI-designed compound 16,Recursion,416,INTERVENTIONAL,target discovery,2017
+NCT10380581,AI study 17 for target discovery,PHASE3,COMPLETED,2020-03,2022-09,Oncology,AI-designed compound 17,Recursion,428,INTERVENTIONAL,target discovery,2020
+NCT98725654,AI study 18 for target discovery,PHASE2,COMPLETED,2016-01,2018-06,Oncology,AI-designed compound 18,Exscientia,321,INTERVENTIONAL,target discovery,2016
+NCT33386929,AI study 19 for target discovery,PHASE1,RECRUITING,2020-03,2022-07,Fibrosis,AI-designed compound 19,Insilico Medicine,401,INTERVENTIONAL,target discovery,2020
+NCT70166480,AI study 20 for target discovery,PHASE2,RECRUITING,2021-08,2023-09,Infectious Disease,AI-designed compound 20,Insilico Medicine,334,INTERVENTIONAL,target discovery,2021
+NCT50484137,AI study 21 for target discovery,NA,RECRUITING,2023-01,2025-08,Oncology,AI-designed compound 21,BioNTech,238,INTERVENTIONAL,target discovery,2023
+NCT75802771,AI study 22 for target discovery,PHASE2,RECRUITING,2023-02,2025-06,Diabetes,AI-designed compound 22,Recursion,53,INTERVENTIONAL,target discovery,2023
+NCT93794475,AI study 23 for target discovery,PHASE3,ACTIVE_NOT_RECRUITING,2025-07,2027-09,Infectious Disease,AI-designed compound 23,Generic University,252,INTERVENTIONAL,target discovery,2025
+NCT67740376,AI study 24 for target discovery,NA,RECRUITING,2017-09,2019-04,Fibrosis,AI-designed compound 24,Recursion,251,INTERVENTIONAL,target discovery,2017
+NCT55490631,AI study 0 for drug repurposing,PHASE3,TERMINATED,2023-07,2025-02,Diabetes,AI-designed compound 0,Exscientia,238,INTERVENTIONAL,drug repurposing,2023
+NCT60237832,AI study 1 for drug repurposing,PHASE1,TERMINATED,2018-02,2020-02,Oncology,AI-designed compound 1,BenevolentAI,67,INTERVENTIONAL,drug repurposing,2018
+NCT60015814,AI study 2 for drug repurposing,PHASE3,RECRUITING,2018-09,2020-09,Fibrosis,AI-designed compound 2,Insilico Medicine,363,INTERVENTIONAL,drug repurposing,2018
+NCT57459130,AI study 3 for drug repurposing,PHASE3,RECRUITING,2022-05,2024-05,Infectious Disease,AI-designed compound 3,Generic University,73,INTERVENTIONAL,drug repurposing,2022
+NCT38553319,AI study 4 for drug repurposing,PHASE3,TERMINATED,2018-04,2020-02,Diabetes,AI-designed compound 4,Generic University,452,INTERVENTIONAL,drug repurposing,2018
+NCT25419645,AI study 5 for drug repurposing,PHASE1,COMPLETED,2020-07,2022-09,Diabetes,AI-designed compound 5,BioNTech,331,INTERVENTIONAL,drug repurposing,2020
+NCT13886030,AI study 6 for drug repurposing,PHASE3,ACTIVE_NOT_RECRUITING,2018-05,2020-06,Alzheimer Disease,AI-designed compound 6,Recursion,23,INTERVENTIONAL,drug repurposing,2018
+NCT86010330,AI study 7 for drug repurposing,PHASE1,RECRUITING,2022-03,2024-01,Alzheimer Disease,AI-designed compound 7,Generic University,402,INTERVENTIONAL,drug repurposing,2022
+NCT60491958,AI study 8 for drug repurposing,PHASE3,TERMINATED,2022-06,2024-03,Diabetes,AI-designed compound 8,BioNTech,179,INTERVENTIONAL,drug repurposing,2022
+NCT86181117,AI study 9 for drug repurposing,PHASE2,RECRUITING,2025-01,2027-03,Oncology,AI-designed compound 9,Generic University,406,INTERVENTIONAL,drug repurposing,2025
+NCT20949687,AI study 10 for drug repurposing,NA,TERMINATED,2020-07,2022-08,Alzheimer Disease,AI-designed compound 10,Exscientia,232,INTERVENTIONAL,drug repurposing,2020
+NCT78765957,AI study 11 for drug repurposing,PHASE3,ACTIVE_NOT_RECRUITING,2017-07,2019-02,Infectious Disease,AI-designed compound 11,BioNTech,367,INTERVENTIONAL,drug repurposing,2017
+NCT75314742,AI study 12 for drug repurposing,NA,ACTIVE_NOT_RECRUITING,2024-01,2026-04,Oncology,AI-designed compound 12,Insilico Medicine,326,INTERVENTIONAL,drug repurposing,2024
+NCT37437207,AI study 13 for drug repurposing,PHASE3,COMPLETED,2020-03,2022-05,Oncology,AI-designed compound 13,Insilico Medicine,187,INTERVENTIONAL,drug repurposing,2020
+NCT76757928,AI study 14 for drug repurposing,PHASE2,COMPLETED,2022-03,2024-07,Diabetes,AI-designed compound 14,Generic University,276,INTERVENTIONAL,drug repurposing,2022
+NCT19673809,AI study 15 for drug repurposing,NA,RECRUITING,2022-07,2024-01,Diabetes,AI-designed compound 15,Insilico Medicine,491,INTERVENTIONAL,drug repurposing,2022
+NCT87277086,AI study 16 for drug repurposing,PHASE1,TERMINATED,2022-07,2024-05,Diabetes,AI-designed compound 16,Insilico Medicine,227,INTERVENTIONAL,drug repurposing,2022
+NCT33068427,AI study 17 for drug repurposing,NA,TERMINATED,2025-06,2027-02,Alzheimer Disease,AI-designed compound 17,Insilico Medicine,452,INTERVENTIONAL,drug repurposing,2025
+NCT68475513,AI study 18 for drug repurposing,NA,TERMINATED,2025-09,2027-02,Diabetes,AI-designed compound 18,Exscientia,465,INTERVENTIONAL,drug repurposing,2025
+NCT39738898,AI study 19 for drug repurposing,PHASE1,COMPLETED,2021-02,2023-09,Alzheimer Disease,AI-designed compound 19,Generic University,291,INTERVENTIONAL,drug repurposing,2021
+NCT56892354,AI study 20 for drug repurposing,PHASE2,COMPLETED,2021-04,2023-02,Alzheimer Disease,AI-designed compound 20,Recursion,151,INTERVENTIONAL,drug repurposing,2021
+NCT90852623,AI study 21 for drug repurposing,NA,RECRUITING,2018-03,2020-08,Infectious Disease,AI-designed compound 21,Generic University,406,INTERVENTIONAL,drug repurposing,2018
+NCT70251043,AI study 22 for drug repurposing,NA,ACTIVE_NOT_RECRUITING,2025-06,2027-03,Fibrosis,AI-designed compound 22,BenevolentAI,54,INTERVENTIONAL,drug repurposing,2025
+NCT94743076,AI study 23 for drug repurposing,PHASE1,ACTIVE_NOT_RECRUITING,2020-01,2022-06,Fibrosis,AI-designed compound 23,BenevolentAI,178,INTERVENTIONAL,drug repurposing,2020
+NCT15047559,AI study 24 for drug repurposing,PHASE1,ACTIVE_NOT_RECRUITING,2016-05,2018-02,Infectious Disease,AI-designed compound 24,Generic University,334,INTERVENTIONAL,drug repurposing,2016
