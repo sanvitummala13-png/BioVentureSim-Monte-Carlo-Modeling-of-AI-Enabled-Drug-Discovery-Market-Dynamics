@@ -1,0 +1,8 @@
+segment,current_market_size_usd,cagr_low,cagr_base,cagr_high,volatility,regulatory_acceptance,clinical_validation_score,funding_sensitivity,partnership_intensity,compute_cost_risk,competition_intensity,breakthrough_probability,failure_shock_probability
+AI small molecule discovery,1800000000,0.18,0.27,0.38,0.22,0.55,0.50,0.65,0.70,0.45,0.70,0.12,0.08
+AI biologics and protein design,1200000000,0.22,0.32,0.45,0.28,0.45,0.42,0.70,0.65,0.60,0.55,0.15,0.10
+AI target discovery,900000000,0.20,0.30,0.42,0.25,0.50,0.48,0.60,0.72,0.40,0.60,0.13,0.07
+AI drug repurposing,600000000,0.15,0.22,0.30,0.18,0.60,0.55,0.50,0.55,0.30,0.50,0.10,0.06
+AI clinical trial optimization,750000000,0.17,0.25,0.35,0.20,0.48,0.45,0.58,0.62,0.35,0.55,0.11,0.07
+AI toxicology and safety prediction,500000000,0.16,0.24,0.33,0.19,0.52,0.50,0.55,0.50,0.38,0.48,0.10,0.06
+AI lab automation and robotics,1100000000,0.19,0.28,0.40,0.24,0.58,0.46,0.68,0.58,0.65,0.62,0.12,0.09
