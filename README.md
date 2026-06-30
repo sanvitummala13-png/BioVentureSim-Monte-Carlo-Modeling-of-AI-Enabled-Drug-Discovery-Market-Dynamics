@@ -4,9 +4,7 @@
 A research-style quantitative project that simulates how uncertainty across
 **regulatory acceptance, pharma partnerships, clinical-trial productivity,
 venture funding, model performance, compute costs, and scientific validation**
-shapes the future market for AI-enabled drug discovery. It produces
-publication-quality figures, CSV outputs, and reproducible notebooks — **not** a
-dashboard.
+shapes the future market for AI-enabled drug discovery. 
 
 ---
 
