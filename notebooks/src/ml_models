@@ -1,0 +1,151 @@
+"""
+ml_models.py
+============
+Supervised-learning layer. We build a synthetic sector-year feature dataset
+from the Monte Carlo output and learn to predict whether a segment-year will
+OUTPERFORM the market (its annual growth exceeds the cross-segment average
+annual growth for that simulated year).
+
+Models: Logistic Regression, Random Forest, Gradient Boosting.
+Metrics: accuracy, F1, ROC-AUC, confusion matrix, feature importance.
+Saved to outputs/model_metrics.csv and a feature-importance CSV.
+"""
+
+from __future__ import annotations
+
+import numpy as np
+import pandas as pd
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (accuracy_score, confusion_matrix, f1_score,
+                             roc_auc_score)
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+from src import config
+from src.utils import get_logger
+
+logger = get_logger(__name__)
+
+FEATURE_COLUMNS = [
+    "annual_growth_lag",
+    "market_size",
+    "breakthrough_event",
+    "failure_shock",
+    "regulatory_multiplier",
+    "funding_multiplier",
+    "competition_multiplier",
+    "segment_code",
+    "year",
+]
+
+
+def build_dataset(results: pd.DataFrame) -> pd.DataFrame:
+    """
+    Engineer a feature table from raw simulation rows.
+
+    Target: outperform_market = 1 if a segment-year's annual growth exceeds
+    the mean annual growth across all segments for that (simulation, year).
+    """
+    df = results.copy()
+
+    # Cross-segment average growth per (simulation_id, year).
+    mkt_avg = (df.groupby(["simulation_id", "year"])["annual_growth"]
+                 .transform("mean"))
+    df["market_avg_growth"] = mkt_avg
+    df["outperform_market"] = (df["annual_growth"] > df["market_avg_growth"]).astype(int)
+
+    # A simple lagged-growth feature (previous year's growth within a path).
+    df = df.sort_values(["segment", "simulation_id", "year"])
+    df["annual_growth_lag"] = (df.groupby(["segment", "simulation_id"])
+                                 ["annual_growth"].shift(1).fillna(0.0))
+
+    # Encode segment as an integer code.
+    df["segment_code"] = df["segment"].astype("category").cat.codes
+
+    return df
+
+
+def _evaluate(name, model, X_test, y_test) -> dict:
+    """Compute the standard metric bundle for a fitted classifier."""
+    preds = model.predict(X_test)
+    proba = (model.predict_proba(X_test)[:, 1]
+             if hasattr(model, "predict_proba") else preds)
+    cm = confusion_matrix(y_test, preds)
+    return {
+        "model": name,
+        "accuracy": accuracy_score(y_test, preds),
+        "f1_score": f1_score(y_test, preds),
+        "roc_auc": roc_auc_score(y_test, proba),
+        "tn": int(cm[0, 0]), "fp": int(cm[0, 1]),
+        "fn": int(cm[1, 0]), "tp": int(cm[1, 1]),
+    }
+
+
+def train_models(results: pd.DataFrame, save: bool = True):
+    """
+    Train all three classifiers and return (metrics_df, importance_df).
+
+    A subsample is used when the simulation table is large, purely for speed;
+    the seed keeps it reproducible.
+    """
+    data = build_dataset(results)
+
+    # Subsample for tractable training on the full 10k-path table.
+    max_rows = 60_000
+    if len(data) > max_rows:
+        data = data.sample(max_rows, random_state=config.RANDOM_SEED)
+
+    X = data[FEATURE_COLUMNS].values
+    y = data["outperform_market"].values
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.25, random_state=config.RANDOM_SEED, stratify=y
+    )
+
+    scaler = StandardScaler()
+    X_train_s = scaler.fit_transform(X_train)
+    X_test_s = scaler.transform(X_test)
+
+    models = {
+        "logistic_regression": LogisticRegression(max_iter=1000),
+        "random_forest": RandomForestClassifier(
+            n_estimators=200, random_state=config.RANDOM_SEED, n_jobs=-1),
+        "gradient_boosting": GradientBoostingClassifier(
+            random_state=config.RANDOM_SEED),
+    }
+
+    metrics = []
+    importances = {}
+    for name, model in models.items():
+        # Logistic regression benefits from scaled inputs; trees do not care.
+        if name == "logistic_regression":
+            model.fit(X_train_s, y_train)
+            metrics.append(_evaluate(name, model, X_test_s, y_test))
+            importances[name] = np.abs(model.coef_[0])
+        else:
+            model.fit(X_train, y_train)
+            metrics.append(_evaluate(name, model, X_test, y_test))
+            importances[name] = model.feature_importances_
+        logger.info("Trained %s (acc=%.3f)", name, metrics[-1]["accuracy"])
+
+    metrics_df = pd.DataFrame(metrics)
+
+    importance_df = pd.DataFrame(importances, index=FEATURE_COLUMNS)
+    importance_df["mean_importance"] = importance_df.mean(axis=1)
+    importance_df = importance_df.sort_values("mean_importance", ascending=False)
+
+    if save:
+        config.ensure_dirs()
+        metrics_df.to_csv(config.MODEL_METRICS_CSV, index=False)
+        importance_df.to_csv(config.OUTPUTS_DIR / "feature_importance.csv")
+        logger.info("Saved model metrics -> %s", config.MODEL_METRICS_CSV)
+    return metrics_df, importance_df
+
+
+if __name__ == "__main__":
+    sim = pd.read_csv(config.SIMULATION_RESULTS_CSV)
+    m, imp = train_models(sim)
+    print(m.to_string(index=False))
+    print(imp)
+
