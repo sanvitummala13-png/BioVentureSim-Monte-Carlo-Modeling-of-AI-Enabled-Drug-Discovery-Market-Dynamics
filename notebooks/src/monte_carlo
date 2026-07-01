@@ -1,0 +1,280 @@
+"""
+monte_carlo.py
+==============
+The simulation engine. Runs N (default 10,000) Monte Carlo paths per market
+segment over a 10-year horizon (2026-2035) and computes quant/risk metrics.
+
+For every (simulation, year, segment) we model:
+    * annual growth rate        (triangular CAGR + normal volatility noise)
+    * market size               (compounded year over year)
+    * funding shock             (correlated macro venture-funding cycle)
+    * regulatory acceleration   (driven by regulatory_acceptance)
+    * clinical validation boost (driven by clinical_validation_score)
+    * compute cost drag         (lognormal, scaled by compute_cost_risk)
+    * competition compression   (beta-distributed, scaled by competition)
+    * breakthrough event        (Bernoulli -> multiplicative uplift)
+    * failure shock             (Bernoulli -> multiplicative drawdown)
+
+Distributions used (as required):
+    CAGR ............... triangular(low, base, high)
+    volatility ......... normal noise
+    breakthrough ....... Bernoulli
+    failure shock ...... Bernoulli
+    compute cost drag .. lognormal
+    competition ........ beta
+"""
+
+from __future__ import annotations
+
+import numpy as np
+import pandas as pd
+
+from src import config
+from src.utils import get_logger, set_seed
+
+logger = get_logger(__name__)
+
+
+def _segment_paths(rng: np.random.Generator, row: pd.Series,
+                   funding_cycle: np.ndarray) -> pd.DataFrame:
+    """
+    Simulate all Monte Carlo paths for a single segment (vectorised over
+    simulations, looped over years for clarity).
+
+    Parameters
+    ----------
+    rng : numpy Generator
+    row : one row of the assumptions DataFrame (a segment)
+    funding_cycle : shape (n_sims, n_years) shared macro funding factor
+
+    Returns
+    -------
+    Long-format DataFrame with one row per (simulation_id, year).
+    """
+    n_sims = config.N_SIMULATIONS
+    years = np.arange(config.START_YEAR, config.END_YEAR + 1)
+    n_years = len(years)
+
+    seg = row["segment"]
+    start_size = float(row["current_market_size_usd"])
+
+    # --- Driver parameters (already 0-1 fractions) -------------------
+    cagr_low, cagr_base, cagr_high = row["cagr_low"], row["cagr_base"], row["cagr_high"]
+    vol = float(row["volatility"])
+    reg = float(row["regulatory_acceptance"])
+    clin = float(row["clinical_validation_score"])
+    fund_sens = float(row["funding_sensitivity"])
+    partner = float(row["partnership_intensity"])
+    compute_risk = float(row["compute_cost_risk"])
+    competition = float(row["competition_intensity"])
+    p_break = float(row["breakthrough_probability"])
+    p_fail = float(row["failure_shock_probability"])
+
+    # Pre-allocate output arrays
+    market_size = np.empty((n_sims, n_years))
+    annual_growth = np.empty((n_sims, n_years))
+    breakthrough = np.empty((n_sims, n_years), dtype=int)
+    failure = np.empty((n_sims, n_years), dtype=int)
+    reg_mult = np.empty((n_sims, n_years))
+    fund_mult = np.empty((n_sims, n_years))
+    comp_mult = np.empty((n_sims, n_years))
+
+    prev_size = np.full(n_sims, start_size)
+
+    for t in range(n_years):
+        # 1. Base CAGR via triangular distribution
+        base_cagr = rng.triangular(cagr_low, cagr_base, cagr_high, size=n_sims)
+
+        # 2. Volatility noise (normal)
+        noise = rng.normal(0.0, vol, size=n_sims)
+
+        # 3. Regulatory acceleration: higher acceptance + partnership lifts growth
+        reg_accel = config.REGULATORY_WEIGHT * (reg - 0.5) \
+            + config.PARTNERSHIP_WEIGHT * (partner - 0.5)
+
+        # 4. Clinical validation boost
+        clin_boost = config.CLINICAL_WEIGHT * (clin - 0.5)
+
+        # 5. Funding multiplier: macro cycle bent by segment funding sensitivity
+        f_mult = 1.0 + fund_sens * (funding_cycle[:, t] - 1.0)
+
+        # 6. Compute cost drag (lognormal -> always positive, subtract scaled)
+        compute_drag = config.COMPUTE_WEIGHT * compute_risk * \
+            rng.lognormal(mean=0.0, sigma=0.4, size=n_sims)
+
+        # 7. Competition compression (beta in [0,1], subtract scaled)
+        comp_draw = rng.beta(2.0, 5.0, size=n_sims)
+        comp_compression = config.COMPETITION_WEIGHT * competition * comp_draw
+        c_mult = 1.0 - comp_compression
+
+        # Combine into an effective growth rate for the year
+        growth = (base_cagr + noise + reg_accel + clin_boost
+                  - compute_drag - comp_compression)
+        growth = growth * f_mult  # funding scales the whole growth term
+
+        # 8. Breakthrough & failure events (Bernoulli)
+        b_event = rng.random(n_sims) < p_break
+        f_event = rng.random(n_sims) < p_fail
+        event_mult = (1.0 + config.BREAKTHROUGH_UPLIFT * b_event) * \
+                     (1.0 - config.FAILURE_SHOCK_DRAWDOWN * f_event)
+
+        # New market size (floor at a small positive number)
+        new_size = prev_size * (1.0 + growth) * event_mult
+        new_size = np.maximum(new_size, 1.0)
+
+        # Store
+        market_size[:, t] = new_size
+        annual_growth[:, t] = new_size / prev_size - 1.0
+        breakthrough[:, t] = b_event.astype(int)
+        failure[:, t] = f_event.astype(int)
+        reg_mult[:, t] = 1.0 + reg_accel + clin_boost
+        fund_mult[:, t] = f_mult
+        comp_mult[:, t] = c_mult
+
+        prev_size = new_size
+
+    # --- Reshape to long format --------------------------------------
+    sim_ids = np.repeat(np.arange(n_sims), n_years)
+    year_col = np.tile(years, n_sims)
+
+    out = pd.DataFrame({
+        "simulation_id": sim_ids,
+        "year": year_col,
+        "segment": seg,
+        "market_size": market_size.reshape(-1),
+        "annual_growth": annual_growth.reshape(-1),
+        "breakthrough_event": breakthrough.reshape(-1),
+        "failure_shock": failure.reshape(-1),
+        "regulatory_multiplier": reg_mult.reshape(-1),
+        "funding_multiplier": fund_mult.reshape(-1),
+        "competition_multiplier": comp_mult.reshape(-1),
+    })
+    return out
+
+
+def run_monte_carlo(assumptions: pd.DataFrame,
+                    save: bool = True) -> pd.DataFrame:
+    """
+    Run the full Monte Carlo simulation across every segment and save the
+    long-format results to outputs/simulation_results.csv.
+    """
+    rng = set_seed(config.RANDOM_SEED)
+    n_sims = config.N_SIMULATIONS
+    n_years = config.HORIZON_YEARS
+
+    # Shared macro venture-funding cycle (correlated across segments).
+    funding_cycle = rng.normal(
+        config.FUNDING_CYCLE_MEAN, config.FUNDING_CYCLE_STD,
+        size=(n_sims, n_years),
+    )
+
+    frames = []
+    for _, row in assumptions.iterrows():
+        logger.info("Simulating segment: %s", row["segment"])
+        frames.append(_segment_paths(rng, row, funding_cycle))
+
+    results = pd.concat(frames, ignore_index=True)
+
+    if save:
+        config.ensure_dirs()
+        results.to_csv(config.SIMULATION_RESULTS_CSV, index=False)
+        logger.info(
+            "Saved %d simulation rows -> %s",
+            len(results), config.SIMULATION_RESULTS_CSV,
+        )
+    return results
+
+
+# ----------------------------------------------------------------------
+# Quant / risk metrics
+# ----------------------------------------------------------------------
+def _value_at_risk(returns: np.ndarray, conf: float) -> float:
+    """Historical VaR: the loss at the (1-conf) quantile (positive = loss)."""
+    q = np.percentile(returns, (1.0 - conf) * 100.0)
+    return -q
+
+
+def _expected_shortfall(returns: np.ndarray, conf: float) -> float:
+    """Expected Shortfall (CVaR): mean loss beyond the VaR threshold."""
+    threshold = np.percentile(returns, (1.0 - conf) * 100.0)
+    tail = returns[returns <= threshold]
+    return -tail.mean() if tail.size else 0.0
+
+
+def summarise_segments(results: pd.DataFrame,
+                       assumptions: pd.DataFrame,
+                       save: bool = True) -> pd.DataFrame:
+    """
+    Compute per-segment quant metrics on the 2035 (terminal) market size and
+    full-horizon annual returns. Save to outputs/segment_summary.csv.
+    """
+    end_year = config.END_YEAR
+    final = results[results["year"] == end_year]
+
+    # Dominance: per simulation, which segment is largest in 2035?
+    pivot_final = final.pivot_table(
+        index="simulation_id", columns="segment", values="market_size"
+    )
+    dominant = pivot_final.idxmax(axis=1)
+    dominance_prob = dominant.value_counts(normalize=True)
+
+    rows = []
+    for seg in assumptions["segment"]:
+        seg_final = final[final["segment"] == seg]["market_size"].values
+        seg_all = results[results["segment"] == seg]
+        start_size = float(
+            assumptions.loc[assumptions["segment"] == seg,
+                            "current_market_size_usd"].iloc[0]
+        )
+
+        # Annual returns across the whole horizon for volatility / risk stats.
+        annual_returns = seg_all["annual_growth"].values
+
+        expected_2035 = seg_final.mean()
+        p05, p50, p95 = np.percentile(seg_final, [5, 50, 95])
+        prob_double = float((seg_final >= 2.0 * start_size).mean())
+        prob_decline = float((seg_final < start_size).mean())
+        ann_vol = float(np.std(annual_returns))
+        downside = annual_returns[annual_returns < 0]
+        downside_risk = float(np.std(downside)) if downside.size else 0.0
+        var = _value_at_risk(annual_returns, config.VAR_CONFIDENCE)
+        es = _expected_shortfall(annual_returns, config.VAR_CONFIDENCE)
+
+        # Risk-adjusted growth: mean annual return per unit of volatility.
+        mean_ret = float(np.mean(annual_returns))
+        risk_adj = (mean_ret - config.RISK_FREE_RATE) / ann_vol if ann_vol else 0.0
+
+        rows.append({
+            "segment": seg,
+            "start_market_size": start_size,
+            "expected_2035_market_size": expected_2035,
+            "p05_2035": p05,
+            "p50_2035": p50,
+            "p95_2035": p95,
+            "prob_double": prob_double,
+            "prob_decline": prob_decline,
+            "annualized_volatility": ann_vol,
+            "downside_risk": downside_risk,
+            "value_at_risk_95": var,
+            "expected_shortfall_95": es,
+            "risk_adjusted_growth": risk_adj,
+            "dominance_probability": float(dominance_prob.get(seg, 0.0)),
+        })
+
+    summary = pd.DataFrame(rows).sort_values(
+        "expected_2035_market_size", ascending=False
+    ).reset_index(drop=True)
+
+    if save:
+        config.ensure_dirs()
+        summary.to_csv(config.SEGMENT_SUMMARY_CSV, index=False)
+        logger.info("Saved segment summary -> %s", config.SEGMENT_SUMMARY_CSV)
+    return summary
+
+
+if __name__ == "__main__":
+    from src.assumptions import load_assumptions
+
+    a = load_assumptions()
+    res = run_monte_carlo(a)
+    print(summarise_segments(res, a).to_string(index=False))
