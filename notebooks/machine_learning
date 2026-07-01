@@ -1,0 +1,18 @@
+# Setup: make the project root importable
+import sys, os
+sys.path.append(os.path.abspath('..'))
+import pandas as pd, numpy as np
+import matplotlib.pyplot as plt
+from src import config
+from src.assumptions import load_assumptions
+from src.monte_carlo import run_monte_carlo
+from src.ml_models import train_models
+config.N_SIMULATIONS = 2000
+a = load_assumptions()
+results = run_monte_carlo(a, save=False)
+metrics, importance = train_models(results, save=False)
+metrics
+from src.visualization import plot_feature_importance
+plot_feature_importance(importance)
+from IPython.display import Image
+Image(str(config.FIGURES_DIR / '08_feature_importance.png'))
